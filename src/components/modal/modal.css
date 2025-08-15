@@ -1,0 +1,133 @@
+/* Modal.css */
+@keyframes modal-overlay-apperance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-content-apperance {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: modal-overlay-apperance 0.1s ease-out;
+}
+
+.modal-content {
+  box-sizing: content-box;
+  background-color: #FBFBFB;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 50vw;
+  position: relative;
+  height: 80vh;
+  overflow-y: auto;
+  border: 3px solid #000;
+  animation: modal-content-apperance 0.3s ease-out;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: #aaa;
+  transition: all 0.3s ease-in-out;
+}
+
+.modal-close:hover {
+  color: #000;
+}
+
+.modal-body {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.img-in-modal {
+    height: 51vh;
+    align-self: center;
+}
+
+.btn-modal-close-custom {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 7rem;
+    padding: 1rem 1.25rem;
+    border-radius: 0.375rem;
+    border: 1px solid rgb(0 0 0 / 0);
+    background-color: grey;
+    color: #FBFBFB;
+    font-size: 1rem;
+    box-sizing: content-box;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-modal-close-custom:hover {
+    border: 1px solid #000;
+    background-color: #FBFBFB;
+    color: #000;
+}
+
+
+
+.slick-slider.slick-initialized {
+  width: 85%;
+  align-self: center;
+}
+
+.slick-slide.slick-active.slick-current div {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.slick-arrow  {
+  z-index: 1;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slick-arrow:hover {
+  border: 1px solid #000;
+}
+
+.slick-next:before,
+.slick-prev:before {
+  font-size: 1.25rem;
+  color: #000;
+}

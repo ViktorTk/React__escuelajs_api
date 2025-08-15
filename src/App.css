@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.App {
+  text-align: center;
+  background-color: lightgrey;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.grid-card {
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.card {
+  border: 1px solid #282c34;
+  border-radius: 0.375rem;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+.card:hover {
+  background-color: #FBFBFB;
+  transform: scale(1.02);
+}
+
+.loader-box {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: bisque;
+  height: 30vh;
+  width: 30vw;
+  border-radius: 10%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 120px;
+  height: 22px;
+  border-radius: 40px;
+  color: #514b82;
+  border: 2px solid;
+  position: relative;
+}
+.loader::before {
+  content: "";
+  position: absolute;
+  margin: 2px;
+  width: 25%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: inherit;
+  background: currentColor;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+    50% {left:100%;transform: translateX(calc(-100% - 4px))}
+}
+
+.overlay {
+  box-sizing: border-box;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(0 0 0 / 0.25);
+  backdrop-filter: blur(5px);
+  display: none;
+}
+
+.overlay.active {
+  display: block;
+}
+
+.modal-window-product {
+  padding: 2.5rem;
+  text-align: left;
+  z-index: 1;
+  position: fixed;
+  background-color: rgb(81 75 130 / 1);
+  color: #FBFBFB;
+  font-size: 1.5rem;
+  height: 60vh;
+  width: 60vw;
+  border-radius: 5%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.modal-window-product.active {
+  display: block;
+}
